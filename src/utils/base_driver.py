@@ -4,8 +4,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class BaseDriver:
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-    driver.find_element()
+    def __init__(self):
+        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     
     def go_to_url(self, url: str):
         self.driver.get(url)
